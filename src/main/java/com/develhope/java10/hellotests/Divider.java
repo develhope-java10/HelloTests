@@ -5,6 +5,10 @@ public class Divider {
     private int divisor;
 
     public Divider(int dividend, int divisor) {
+        if(divisor == 0){
+
+            throw new ArithmeticException();
+        }
         this.dividend = dividend;
         this.divisor = divisor;
     }
