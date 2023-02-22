@@ -34,6 +34,15 @@ class DividerTest {
         assertEquals(2, result);
     }
 
+    @Test
+    void testZeroDivisor(){
+        assertThrows(ZeroDivisorException.class, () -> {
+
+            new Divider(15,0);
+
+        });
+    }
+
 
 
 }
