@@ -13,6 +13,8 @@ public class HelloTestsApplication {
 				runDivision(inputDividend, inputDivisor);
 			} catch(ZeroDivisorException e){
 				System.out.println("Cannot divide by 0");
+			}catch(NumberFormatException a){
+				System.out.println("Number format exe, write numbers "+a);
 			}
 		}
 
