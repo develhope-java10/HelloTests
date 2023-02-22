@@ -11,10 +11,12 @@ public class HelloTestsApplication {
 			String inputDivisor = keyboard.nextLine();
 			try{
 				runDivision(inputDividend, inputDivisor);
-			} catch(ZeroDivisorException e){
-				System.out.println("Cannot divide by 0");
+			} catch(ZeroDivisorException  e){
+				throw new ArithmeticException();
 			}catch(NumberFormatException a){
-				System.out.println("Number format exe, write numbers "+a);
+				System.out.println("Number format exe, write number "+a);
+			}finally{
+				System.out.println("finally code");
 			}
 		}
 
