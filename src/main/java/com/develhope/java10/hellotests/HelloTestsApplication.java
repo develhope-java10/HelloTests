@@ -1,14 +1,22 @@
 package com.develhope.java10.hellotests;
 
+import java.util.Scanner;
+
 public class HelloTestsApplication {
 	public static void main(String[] args) {
-		try{
-			runDivision("abbbbbb", "0");
-		} catch(ZeroDivisorException e){
-			System.out.println("Cannot divide by 0");
+		Scanner keyboard = new Scanner(System.in);
+
+		while (true){
+			String inputDividend = keyboard.nextLine();
+			String inputDivisor = keyboard.nextLine();
+			try{
+				runDivision(inputDividend, inputDivisor);
+			} catch(ZeroDivisorException e){
+				System.out.println("Cannot divide by 0");
+			}
 		}
 
-		runDivision("12", "6");
+
 
 	}
 
