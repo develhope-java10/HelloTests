@@ -2,7 +2,7 @@ package com.develhope.java10.hellotests;
 
 public class HelloTestsApplication {
 	public static void main(String[] args) {
-		runDivision("-10", "2");
+		runDivision("-10", "0");
 	}
 
 	public static void runDivision(String rawDividend, String rawDivisor)	 {

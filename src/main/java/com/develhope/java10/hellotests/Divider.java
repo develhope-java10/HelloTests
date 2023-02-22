@@ -7,7 +7,7 @@ public class Divider {
     public Divider(int dividend, int divisor) {
         if(divisor == 0){
 
-            throw new ArithmeticException();
+            throw new ZeroDivisorException();
         }
         this.dividend = dividend;
         this.divisor = divisor;
