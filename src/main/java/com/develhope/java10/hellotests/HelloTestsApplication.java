@@ -1,9 +1,46 @@
 package com.develhope.java10.hellotests;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class HelloTestsApplication {
 	public static void main(String[] args) {
+		File file = new File("C:\\Develhope\\HelloTests\\src\\main\\java\\com\\develhope\\java10\\hellotests\\test.txt");
+		List<String> stringList = new ArrayList<>();
+		String stringa = "";
+		try{
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+			String strCurrentLine;
+			while ((strCurrentLine = bufferedReader.readLine()) != null) {
+				stringList.add(strCurrentLine);
+			}
+
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		try {
+
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+			while(bufferedReader.readLine()!=null){
+
+			}
+			bufferedReader.close();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		BatchDivision batchDivision = new BatchDivision(stringList);
+		List<Double> doubles = batchDivision.result();
+		System.out.println(doubles);
+
+
+
+
+
+
+
+		/*
 		Scanner keyboard = new Scanner(System.in);
 
 		while (true){
@@ -18,7 +55,7 @@ public class HelloTestsApplication {
 			}finally{
 				System.out.println("finally code");
 			}
-		}
+		}*/
 
 
 
