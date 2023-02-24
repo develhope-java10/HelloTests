@@ -3,10 +3,8 @@ package com.develhope.java10.hellotests;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.develhope.java10.hellotests.IntegerParser;
-
 public class BatchDivision {
-	private List<String> stringList;
+	private final List<String> stringList;
 
 	public BatchDivision(List<String> stringList) {
 		this.stringList = stringList;
@@ -27,10 +25,10 @@ public class BatchDivision {
 				System.out.println("Errore di caricamento");
 				continue;
 			}
-			result.add( (dividend / divisor));
-
-
-		}
+			if (divisor!=0) {
+				result.add((dividend / divisor));
+			}
+}
 		return result;
 	}
 }
