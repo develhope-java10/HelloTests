@@ -20,11 +20,13 @@ public class BatchDivision {
                 int dividend = divisionParser.parse(parts[0]);
                 int divisor = divisionParser.parse(parts[1]);
                 if (divisor != 0) {
-                    double result = (double) dividend / divisor;
+                    double result = new Divider(dividend, divisor).result();
                     resultValues.add(result);
                 }
             } catch (ZeroDivisorException | ArithmeticException e) {
-                System.out.println("Not accepted");
+                System.out.println("Continue");
+            }catch (NumberFormatException a){
+                throw new NumberFormatException();
             }
         }
 
