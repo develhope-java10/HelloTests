@@ -1,37 +1,32 @@
 package com.develhope.java10.hellotests;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HelloTestsApplication {
 	public static void main(String[] args) {
-		Scanner keyboard = new Scanner(System.in);
-
-		while (true){
-			String inputDividend = keyboard.nextLine();
-			String inputDivisor = keyboard.nextLine();
-			try{
-				runDivision(inputDividend, inputDivisor);
-			} catch(ZeroDivisorException  e){
-				throw new ArithmeticException();
-			}catch(NumberFormatException a){
-				System.out.println("Number format exe, write number "+a);
-			}finally{
-				System.out.println("finally code");
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/main/DividendDivisor.txt"))) {
+			List<String> divisionElements = new ArrayList<>();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				divisionElements.add(line);
 			}
+			BatchDivision batchDivision = new BatchDivision(divisionElements);
+			List<Double> resultValues = batchDivision.result();
+			System.out.println(resultValues);
+			for (Double result : resultValues) {
+				String[] quotients = String.valueOf(result).split(",");
+				try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/Quotients.txt", true))) {
+					for (String singleQuot : quotients) {
+						writer.write(singleQuot);
+						writer.newLine();
+					}
+				}
+			}
+
+		} catch (IOException e) {
+			throw new RuntimeException(e);
 		}
-
-
-
-	}
-
-	public static void runDivision(String rawDividend, String rawDivisor)	 {
-		// Lettura dei dati
-		IntegerParser dividendParser = new IntegerParser();
-		int dividend = dividendParser.parse(rawDividend);
-		int divisor = dividendParser.parse(rawDivisor);
-
-		// Operazione di divisione
-		Divider divider = new Divider(dividend, divisor);
-		System.out.println(divider.result());
 	}
 }
