@@ -10,7 +10,7 @@ public class HelloTestsApplication {
 
 		File file = new File("src/main/java/com/develhope/java10/hellotests/test.txt");
 		List<String> stringList = new ArrayList<>();
-		try{
+		try{ 
 			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 			String strCurrentLine;
 			while ((strCurrentLine = bufferedReader.readLine()) != null) {
