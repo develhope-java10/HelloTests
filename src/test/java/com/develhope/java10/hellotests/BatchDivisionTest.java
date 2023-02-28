@@ -24,7 +24,7 @@ class BatchDivisionTest {
     @BeforeEach
     void setUp() {
 
-        file = new File("C:\\Users\\Federico\\Desktop\\HelloTests\\src\\main\\java\\com\\develhope\\java10\\hellotests\\test.txt");
+        file = new File("src/main/java/com/develhope/java10/hellotests/test.txt");
         stringList = new ArrayList<>();
         try{
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));

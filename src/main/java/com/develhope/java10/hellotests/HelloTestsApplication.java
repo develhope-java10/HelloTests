@@ -8,9 +8,9 @@ import java.util.Scanner;
 public class HelloTestsApplication {
 	public static void main(String[] args) {
 		// federico ha problemi con il pathname! Funziona solo con absoultepath
-		File file = new File("C:\\Users\\Federico\\Desktop\\HelloTests\\src\\main\\java\\com\\develhope\\java10\\hellotests\\test.txt");
+		File file = new File("src/main/java/com/develhope/java10/hellotests/test.txt");
 		List<String> stringList = new ArrayList<>();
-		try{
+		try{ 
 			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 			String strCurrentLine;
 			while ((strCurrentLine = bufferedReader.readLine()) != null) {
