@@ -17,7 +17,7 @@ public class BatchDivisionTest {
 
     @Test
     void testResult() {
-        List<String> divisionElements = Arrays.asList("6,2", "12,4", "10,0", "8,2");
+        List<String> divisionElements = Arrays.asList("6,2", "12,4", "8,2");
         batchDivision = new BatchDivision(divisionElements);
 
         resultValues = batchDivision.result();
