@@ -25,10 +25,10 @@ public class BatchDivision {
 
 			} catch (Exception e) {
 				System.out.println("Errore di caricamento");
-				continue;
 			}
-			result.add( (dividend / divisor));
-
+			if(divisor!=0) {
+				result.add((dividend / divisor));
+			}
 
 		}
 		return result;

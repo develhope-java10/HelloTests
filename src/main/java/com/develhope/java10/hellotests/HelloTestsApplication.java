@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class HelloTestsApplication {
 	public static void main(String[] args) {
-		File file = new File("C:\\Develhope\\HelloTests\\src\\main\\java\\com\\develhope\\java10\\hellotests\\test.txt");
+
+		File file = new File("src/main/java/com/develhope/java10/hellotests/test.txt");
 		List<String> stringList = new ArrayList<>();
-		String stringa = "";
-		try{
+		try{ 
 			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 			String strCurrentLine;
 			while ((strCurrentLine = bufferedReader.readLine()) != null) {
@@ -19,17 +19,9 @@ public class HelloTestsApplication {
 
 		} catch (IOException e) {
 			throw new RuntimeException(e);
-		}
-		try {
 
-			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-			while(bufferedReader.readLine()!=null){
-
-			}
-			bufferedReader.close();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
 		}
+
 		BatchDivision batchDivision = new BatchDivision(stringList);
 		List<Double> doubles = batchDivision.result();
 		System.out.println(doubles);
